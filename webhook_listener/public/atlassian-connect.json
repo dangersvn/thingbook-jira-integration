@@ -1,0 +1,61 @@
+{
+    "name": "Hello World",
+    "description": "Atlassian Connect app",
+    "key": "com.example.myapp",
+    "scopes": [
+        "read"
+    ],
+    "baseUrl": "https://972caf2a.ngrok.io",
+    "vendor": {
+        "name": "Example, Inc.",
+        "url": "http://example.com"
+    },
+    "authentication": {
+        "type": "none"
+    },
+    "apiVersion": 1,
+    "modules": {
+        "generalPages": [
+            {
+                "url": "/helloworld.html",
+                "key": "hello-world",
+                "location": "system.top.navigation.bar",
+                "name": {
+                    "value": "Greeting"
+                }
+            }
+        ],
+        "webhooks": [
+            {
+                "event": "jira:issue_created",
+                "url": "/api/webhook/issue-created",
+                "excludeBody": false,
+                "filter": "project = TS",
+                "propertyKeys": [
+                    "fields",
+                    "key"
+                ]
+            },
+            {
+                "event": "jira:issue_updated",
+                "url": "/api/webhook/issue-created",
+                "excludeBody": false,
+                "filter": "project = TS",
+                "propertyKeys": [
+                    "fields",
+                    "key"
+                ]
+            },
+            {
+                "event": "jira:comment_created",
+                "url": "/api/webhook/issue-created",
+                "excludeBody": false,
+                "filter": "project = TS",
+                "propertyKeys": [
+                    "fields",
+                    "key"
+                ]
+            }
+        ]
+    }
+}
