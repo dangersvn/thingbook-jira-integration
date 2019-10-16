@@ -1,0 +1,8 @@
+applications:
+  - timeout: 60
+    name: jiralistener
+    command: npm start
+    buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+    stack: cflinuxfs3
+    memory: 1G
+    instances: 1

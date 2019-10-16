@@ -9,7 +9,8 @@ app.use(express.static('public'))
 require('./app/routes/jira.webhook.routes.js')(app);
 
 // Create a Server
-var server = app.listen(8000, function () {
+const serverPort = process.env.PORT || 8000;
+var server = app.listen(serverPort, function () {
 
   var host = server.address().address;
   var port = server.address().port
